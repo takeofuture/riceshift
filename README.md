@@ -226,7 +226,7 @@ The notebook automatically extracts `data.zip` and reads the analysis-ready Step
 
 ## Data-preparation pipeline
 
-The repository contains the EC2 data-preparation workflow used to create the compact analysis-ready outputs in `data.zip`.
+The repository contains the Ubuntu 24.04 data-preparation workflow used to create the compact analysis-ready outputs in `data.zip`.
 
 **Most users only need `data.zip` and the Colab notebook.**  
 Steps 20–30 are provided for transparency, reproducibility, and for users who want to rebuild the analysis-ready dataset from source data.
@@ -301,9 +301,18 @@ RiceShift/
 
 ---
 
-## EC2 environment
+## Local processing environment
 
-The actual EC2 environment used for the project is documented in `requirements.txt`.
+The data-preparation pipeline was developed and executed on **Ubuntu 24.04 LTS**.
+
+It does not depend on a specific cloud provider or hosted service. The same workflow can be run on a suitable local or virtual Linux environment, including:
+
+- a native Ubuntu 24.04 PC or workstation
+- Windows 11 with **WSL2 + Ubuntu 24.04**
+- a Linux virtual machine
+- a cloud-hosted Ubuntu 24.04 instance
+
+The Python environment used for the project is documented in `requirements.txt`.
 
 Install with:
 
