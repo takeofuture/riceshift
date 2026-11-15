@@ -182,9 +182,54 @@ https://sdmdataaccess.sc.egov.usda.gov/
 
 ---
 
+## Quick start — run the Colab experiment
+
+For the hackathon demonstration, **you do not need to rerun the full Steps 20–30 data-preparation pipeline**.
+
+The analysis-ready data required by the Colab notebook have already been extracted and packaged as:
+
+```text
+data.zip
+```
+
+`data.zip` is stored in the repository root and contains:
+
+```text
+data.zip
+├── step24/
+├── step25/
+├── step27/
+├── step28/
+├── step29/
+└── step30/
+```
+
+### Run in Google Colab
+
+1. Open `notebooks/RiceShift_Submission_Experiment.ipynb` in Google Colab.
+2. Download `data.zip` from this repository.
+3. In Colab, open the **Files** panel on the left.
+4. Drag and drop `data.zip` directly into the Colab runtime.
+5. Confirm that it appears as:
+
+```text
+/content/data.zip
+```
+
+6. Run the notebook from top to bottom.
+
+**Google Drive is not required.**
+
+The notebook automatically extracts `data.zip` and reads the analysis-ready Step folders.
+
+---
+
 ## Data-preparation pipeline
 
-The repository contains the EC2 data-preparation workflow used to build compact analysis-ready outputs.
+The repository contains the EC2 data-preparation workflow used to create the compact analysis-ready outputs in `data.zip`.
+
+**Most users only need `data.zip` and the Colab notebook.**  
+Steps 20–30 are provided for transparency, reproducibility, and for users who want to rebuild the analysis-ready dataset from source data.
 
 ```text
 Step 20  Raw native data download + georeferencing
@@ -231,11 +276,11 @@ The scientific workflow is unchanged.
 ```text
 RiceShift/
 ├── README.md
-├── AI_USE.md
 ├── requirements.txt
 ├── config.py
 ├── config.example.py
 ├── .gitignore
+├── data.zip
 │
 ├── scripts/
 │   ├── 20_california_rice_raw_native_downloader.py
@@ -253,14 +298,6 @@ RiceShift/
 └── notebooks/
     └── RiceShift_Submission_Experiment.ipynb
 ```
-
-A compact Colab-ready analysis bundle will also be provided as:
-
-```text
-RiceShift_colab_bundle.zip
-```
-
-The final public Colab workflow is being simplified so that users can upload the compact bundle directly into the Colab file panel and run the notebook without depending on the original AWS EC2 filesystem layout.
 
 ---
 
@@ -313,10 +350,12 @@ https://quickstats.nass.usda.gov/api/
 
 ## Colab experiment
 
-The Colab notebook is designed to demonstrate the RiceShift analysis in a compact sequence:
+The Colab notebook demonstrates the RiceShift analysis in a compact sequence:
 
 ```text
-Load analysis-ready bundle
+Upload data.zip
+        ↓
+Automatic extraction
         ↓
 Data integrity check
         ↓
@@ -328,10 +367,10 @@ NASA / NASS integrated analysis
         ↓
 Exploratory yield relationships
         ↓
+SSURGO soil context
+        ↓
 RiceShift strategy comparison
 ```
-
-The final Colab version will be designed for simple public reproduction using the compact `RiceShift_colab_bundle.zip`.
 
 ---
 
