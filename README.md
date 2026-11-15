@@ -348,24 +348,6 @@ Therefore:
 
 ---
 
-## Super Intelligence / AI assistance
-
-OpenAI ChatGPT was used during development to assist with:
-
-- code drafting and refactoring
-- debugging
-- validation planning
-- documentation
-- exploratory-analysis design
-
-All published scripts were reviewed and executed by the project author.
-
-See:
-
-`AI_USE.md`
-
----
-
 ## Project status
 
 This repository documents the complete RiceShift data-preparation workflow and the hackathon analysis prototype developed for:
